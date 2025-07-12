@@ -1,0 +1,107 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 274 66% 96%; /* Lila muy claro */
+    --foreground: 240 50% 10%; /* Azul oscuro */
+    --card: 274 66% 96%;
+    --card-foreground: 240 50% 10%;
+    --popover: 274 66% 96%;
+    --popover-foreground: 240 50% 10%;
+    --primary: 180 100% 40%; /* Azul Eléctrico más oscuro */
+    --primary-foreground: 274 66% 98%;
+    --secondary: 271 76% 53%; /* Morado Vibrante */
+    --secondary-foreground: 274 66% 98%;
+    --muted: 274 30% 90%; /* Lila grisáceo */
+    --muted-foreground: 240 30% 40%;
+    --accent: 274 30% 90%;
+    --accent-foreground: 240 50% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 274 30% 85%;
+    --input: 274 30% 90%;
+    --ring: 180 100% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 50% 3%; /* Azul casi negro */
+    --foreground: 274 66% 90%; /* Lila Claro */
+    --card: 240 50% 7%;
+    --card-foreground: 274 66% 90%;
+    --popover: 240 50% 3%;
+    --popover-foreground: 274 66% 90%;
+    --primary: 180 100% 50%; /* Azul Eléctrico */
+    --primary-foreground: 240 100% 4%;
+    --secondary: 271 76% 53%; /* Morado Vibrante */
+    --secondary-foreground: 274 66% 90%;
+    --muted: 265 48% 23%; /* Azul Medio-Morado oscuro */
+    --muted-foreground: 274 30% 75%;
+    --accent: 265 48% 23%;
+    --accent-foreground: 274 66% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 265 48% 23%;
+    --input: 265 48% 18%;
+    --ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+.glass-card {
+  @apply bg-card/50 backdrop-blur-xl border rounded-xl;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.income-gradient {
+  @apply bg-gradient-to-r from-emerald-500 to-green-400;
+}
+
+.expense-gradient {
+  @apply bg-gradient-to-r from-red-500 to-pink-400;
+}
+
+.savings-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary;
+}
+
+.chart-container {
+  @apply relative overflow-hidden rounded-xl;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
